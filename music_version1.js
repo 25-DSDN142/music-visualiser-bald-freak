@@ -222,11 +222,35 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    fill(255) //white
    ellipse(1280 - drum_x - 30, drum_y - 230, drum_rad - 70, drum_rad - 70)
  
-   // display "words"
+
+   //GUITAR/OTHER>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  
+  otherMap1 = map(other, 0, 100, 0, 180)
+  otherMap2 = map(other, 0, 100, 370, 430)
+  fill(0,0,0,0)
+  stroke(242, 109, 151)
+  strokeWeight(40)
+  ellipse(640, 480, 420, 420)
+  stroke(255)
+  strokeWeight(5)
+  for(let i = 1; i <= otherMap1; i++){
+    
+    let circStep = i * 2;
+    ellipse(640,480, otherMap2 - circStep, otherMap2 - circStep)
+
+  }
+
+
+
+   //LYRICS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+   vocalMap = map(vocal, 0, 100, 10, 130)
    stroke(245, 154, 203, 100)
    strokeWeight(10)
    fill(255)
    textAlign(CENTER);
-   textSize(vocal);
-   text(words, width/2, height/3);
+   textSize(vocalMap);
+   text(words, width/2, 150);
+
+   
 }
